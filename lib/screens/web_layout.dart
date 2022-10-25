@@ -51,8 +51,13 @@ class WebLayout extends StatelessWidget {
                               ),
                             ),
                           ),
-                          MaterialButton(
-                            color: const Color.fromARGB(255, 255, 17, 0),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: const Color.fromARGB(255, 255, 17, 0),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 25,
+                                  vertical: 15,
+                                )),
                             onPressed: () {},
                             child: const Text(
                               'Sign In',
@@ -99,44 +104,76 @@ class WebLayout extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                            width: 450,
-                            height: 55,
-                            child: TextField(
-                              decoration: InputDecoration(
-                                  filled: true,
-                                  fillColor: Colors.white,
-                                  hintText: 'Email Address',
-                                  hintStyle: TextStyle(
-                                    color: Colors.grey,
-                                  )),
+                          Expanded(
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 250.0),
+                              child: TextField(
+                                cursorHeight: 40,
+                                decoration: InputDecoration(
+                                    contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 25.0,
+                                      horizontal: 15,
+                                    ),
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    hintText: 'Email Address',
+                                    hintStyle:
+                                        const TextStyle(color: Colors.grey),
+                                    suffixIcon: Container(
+                                      height: 65,
+                                      width: 250,
+                                      color:
+                                          const Color.fromARGB(255, 255, 17, 0),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: const [
+                                          Text(
+                                            'Get Started',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 25,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(left: 7.0),
+                                            child: Icon(
+                                              Icons.arrow_forward_ios_rounded,
+                                              color: Colors.white,
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )),
+                              ),
                             ),
                           ),
-                          // ignore: deprecated_member_use
-                          Container(
-                            color: const Color.fromARGB(255, 255, 17, 0),
-                            width: 200,
-                            height: 48,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  'Get Started',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 4.0),
-                                  child: Icon(
-                                    Icons.arrow_forward_ios_rounded,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              ],
-                            ),
-                          )
+
+                          // Container(
+                          //   color: const Color.fromARGB(255, 255, 17, 0),
+                          //   width: 200,
+                          //   height: 48,
+                          //   child: Row(
+                          //     mainAxisAlignment: MainAxisAlignment.center,
+                          //     children: const [
+                          //       Text(
+                          //         'Get Started',
+                          //         style: TextStyle(
+                          //           color: Colors.white,
+                          //           fontSize: 25,
+                          //         ),
+                          //       ),
+                          //       Padding(
+                          //         padding: EdgeInsets.only(left: 4.0),
+                          //         child: Icon(
+                          //           Icons.arrow_forward_ios_rounded,
+                          //           color: Colors.white,
+                          //         ),
+                          //       )
+                          //     ],
+                          //   ),
+                          // )
                         ],
                       ),
                     ),
@@ -329,179 +366,32 @@ class WebLayout extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        const Text('Frequently Asked Questions',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 35.0),
-                          child: Container(
-                              width: MediaQuery.of(context).size.width * 0.50,
-                              height: 60,
-                              color: Colors.grey[800],
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 19.0,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: const [
-                                    Text('What is Netflix?',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                        )),
-                                    Icon(
-                                      Icons.add,
-                                      size: 30,
-                                      color: Colors.white,
-                                    )
-                                  ],
-                                ),
+                        const Padding(
+                          padding: EdgeInsets.only(bottom: 40.0),
+                          child: Text('Frequently Asked Questions',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
                               )),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Container(
-                              width: MediaQuery.of(context).size.width * 0.50,
-                              height: 60,
-                              color: Colors.grey[800],
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 19.0,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: const [
-                                    Text('How much does Netflix cost?',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                        )),
-                                    Icon(
-                                      Icons.add,
-                                      size: 30,
-                                      color: Colors.white,
-                                    )
-                                  ],
-                                ),
-                              )),
+                        const FrequentlyAskedQuestions(
+                          label: 'What is Netflix?',
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Container(
-                              width: MediaQuery.of(context).size.width * 0.50,
-                              height: 60,
-                              color: Colors.grey[800],
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 19.0,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: const [
-                                    Text('Where can I watch?',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                        )),
-                                    Icon(
-                                      Icons.add,
-                                      size: 30,
-                                      color: Colors.white,
-                                    )
-                                  ],
-                                ),
-                              )),
+                        const FrequentlyAskedQuestions(
+                          label: 'How much does Netflix cost?',
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Container(
-                              width: MediaQuery.of(context).size.width * 0.50,
-                              height: 60,
-                              color: Colors.grey[800],
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 19.0,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: const [
-                                    Text('How do I cancel?',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                        )),
-                                    Icon(
-                                      Icons.add,
-                                      size: 30,
-                                      color: Colors.white,
-                                    )
-                                  ],
-                                ),
-                              )),
+                        const FrequentlyAskedQuestions(
+                          label: 'Where can I watch?',
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Container(
-                              width: MediaQuery.of(context).size.width * 0.50,
-                              height: 60,
-                              color: Colors.grey[800],
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 19.0,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: const [
-                                    Text('What can I watch on Netflix?',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                        )),
-                                    Icon(
-                                      Icons.add,
-                                      size: 30,
-                                      color: Colors.white,
-                                    )
-                                  ],
-                                ),
-                              )),
+                        const FrequentlyAskedQuestions(
+                          label: 'How do I cancel?',
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: Container(
-                              width: MediaQuery.of(context).size.width * 0.50,
-                              height: 60,
-                              color: Colors.grey[800],
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 19.0,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: const [
-                                    Text('Is Netflix good for kids?',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                        )),
-                                    Icon(
-                                      Icons.add,
-                                      size: 30,
-                                      color: Colors.white,
-                                    )
-                                  ],
-                                ),
-                              )),
+                        const FrequentlyAskedQuestions(
+                          label: 'What can I watch on Netflix',
+                        ),
+                        const FrequentlyAskedQuestions(
+                          label: 'Is Netflix good for Kids?',
                         ),
                         const Padding(
                           padding: EdgeInsets.only(top: 50.0),
@@ -563,7 +453,7 @@ class WebLayout extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 90.0),
+                    padding: const EdgeInsets.symmetric(vertical: 70.0),
                     child: Divider(
                       thickness: 10,
                       color: Colors.grey[800],
@@ -572,148 +462,210 @@ class WebLayout extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 15.0,
-                      horizontal: 250,
+                      horizontal: 230,
                     ),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('FAQ',
-                                  style: TextStyle(
-                                    color: Colors.grey[800],
-                                    fontSize: 12,
-                                  )),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 25.0),
-                                child: Text('Investor Relations',
-                                    style: TextStyle(
-                                      color: Colors.grey[800],
-                                      fontSize: 12,
-                                    )),
-                              ),
-                              Text('Privacy',
-                                  style: TextStyle(
-                                    color: Colors.grey[800],
-                                    fontSize: 12,
-                                  )),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 25.0),
-                                child: Text('Speed Test',
-                                    style: TextStyle(
-                                      color: Colors.grey[800],
-                                      fontSize: 12,
-                                    )),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 110.0),
-                            child: Column(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Questions? Contact Us',
+                            style: TextStyle(
+                              color: Colors.grey[500],
+                              fontSize: 15,
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 20.0),
+                          child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Help Center',
-                                    style: TextStyle(
-                                      color: Colors.grey[800],
-                                      fontSize: 12,
-                                    )),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 25.0),
-                                  child: Text('Jobs',
-                                      style: TextStyle(
-                                        color: Colors.grey[800],
-                                        fontSize: 12,
-                                      )),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 18.0),
+                                      child: Text('FAQ',
+                                          style: TextStyle(
+                                            color: Colors.grey[500],
+                                            fontSize: 12,
+                                          )),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Investor Relations',
+                                          style: TextStyle(
+                                            color: Colors.grey[500],
+                                            fontSize: 12,
+                                          )),
+                                    ),
+                                    Text('Privacy',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Speed Test',
+                                          style: TextStyle(
+                                            color: Colors.grey[500],
+                                            fontSize: 12,
+                                          )),
+                                    )
+                                  ],
                                 ),
-                                Text('Cookie Preferences',
-                                    style: TextStyle(
-                                      color: Colors.grey[800],
-                                      fontSize: 12,
-                                    )),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
-                                      vertical: 25.0),
-                                  child: Text('Legal Notice',
-                                      style: TextStyle(
-                                        color: Colors.grey[800],
-                                        fontSize: 12,
-                                      )),
+                                      horizontal: 110.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Help Center',
+                                          style: TextStyle(
+                                            color: Colors.grey[500],
+                                            fontSize: 12,
+                                          )),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 25.0),
+                                        child: Text('Jobs',
+                                            style: TextStyle(
+                                              color: Colors.grey[500],
+                                              fontSize: 12,
+                                            )),
+                                      ),
+                                      Text('Cookie Preferences',
+                                          style: TextStyle(
+                                            color: Colors.grey[500],
+                                            fontSize: 12,
+                                          )),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 25.0),
+                                        child: Text('Legal Notice',
+                                            style: TextStyle(
+                                              color: Colors.grey[500],
+                                              fontSize: 12,
+                                            )),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Account',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Ways to watch',
+                                          style: TextStyle(
+                                            color: Colors.grey[500],
+                                            fontSize: 12,
+                                          )),
+                                    ),
+                                    Text('Corporate information',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Only on Netflix',
+                                          style: TextStyle(
+                                            color: Colors.grey[500],
+                                            fontSize: 12,
+                                          )),
+                                    )
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 110.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Media Center',
+                                          style: TextStyle(
+                                            color: Colors.grey[500],
+                                            fontSize: 12,
+                                          )),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 25.0),
+                                        child: Text('Terms of Use',
+                                            style: TextStyle(
+                                              color: Colors.grey[500],
+                                              fontSize: 12,
+                                            )),
+                                      ),
+                                      Text('Contact Us',
+                                          style: TextStyle(
+                                            color: Colors.grey[500],
+                                            fontSize: 12,
+                                          )),
+                                    ],
+                                  ),
                                 )
-                              ],
-                            ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Account',
-                                  style: TextStyle(
-                                    color: Colors.grey[800],
-                                    fontSize: 12,
-                                  )),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 25.0),
-                                child: Text('Ways to watch',
-                                    style: TextStyle(
-                                      color: Colors.grey[800],
-                                      fontSize: 12,
-                                    )),
-                              ),
-                              Text('Corporate information',
-                                  style: TextStyle(
-                                    color: Colors.grey[800],
-                                    fontSize: 12,
-                                  )),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 25.0),
-                                child: Text('Only on Netflix',
-                                    style: TextStyle(
-                                      color: Colors.grey[800],
-                                      fontSize: 12,
-                                    )),
-                              )
-                            ],
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 110.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Media Center',
-                                    style: TextStyle(
-                                      color: Colors.grey[800],
-                                      fontSize: 12,
-                                    )),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 25.0),
-                                  child: Text('Terms of Use',
-                                      style: TextStyle(
-                                        color: Colors.grey[800],
-                                        fontSize: 12,
-                                      )),
-                                ),
-                                Text('Contact Us',
-                                    style: TextStyle(
-                                      color: Colors.grey[800],
-                                      fontSize: 12,
-                                    )),
-                              ],
-                            ),
-                          )
-                        ]),
+                              ]),
+                        ),
+                        Text('Netflix Nigeria',
+                            style: TextStyle(
+                              color: Colors.grey[500],
+                              fontSize: 15,
+                            )),
+                      ],
+                    ),
                   )
                 ],
               )
             ],
           ),
         ));
+  }
+}
+
+class FrequentlyAskedQuestions extends StatelessWidget {
+  const FrequentlyAskedQuestions({
+    Key? key,
+    required this.label,
+  }) : super(key: key);
+  final label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0),
+      child: Container(
+          width: MediaQuery.of(context).size.width * 0.50,
+          height: 60,
+          color: Colors.grey[800],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 19.0,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(label,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    )),
+                const Icon(
+                  Icons.add,
+                  size: 30,
+                  color: Colors.white,
+                )
+              ],
+            ),
+          )),
+    );
   }
 }
