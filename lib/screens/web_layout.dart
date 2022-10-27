@@ -9,7 +9,7 @@ class WebLayout extends StatelessWidget {
         backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Stack(
                 children: [
@@ -35,7 +35,7 @@ class WebLayout extends StatelessWidget {
                     ),
                   ),
                   Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(
@@ -76,7 +76,7 @@ class WebLayout extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: 120.0),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               const Text(
                                 'Unlimited movies, TV \n shows, and more.',
@@ -107,8 +107,6 @@ class WebLayout extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(
                                   top: 15.0,
-                                  // left: 350,
-                                  // right: 350,
                                 ),
                                 child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -167,6 +165,7 @@ class WebLayout extends StatelessWidget {
                 ],
               ),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Divider(
                     thickness: 10,
@@ -174,10 +173,11 @@ class WebLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 30.0,
+                      vertical: 20.0,
+                      horizontal: 100.0,
                     ),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,15 +200,14 @@ class WebLayout extends StatelessWidget {
                                 ),
                               )
                             ]),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15.0),
+                        ClipRect(
                           child: Container(
-                            width: 300,
+                            width: 500,
                             height: 400,
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
                               image: AssetImage("tvSet.png"),
-                              fit: BoxFit.cover,
+                              fit: BoxFit.contain,
                             )),
                           ),
                         ),
@@ -224,8 +223,8 @@ class WebLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 25.0,
-                      horizontal: 40,
+                      vertical: 30.0,
+                      horizontal: 100,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -236,7 +235,7 @@ class WebLayout extends StatelessWidget {
                           decoration: const BoxDecoration(
                               image: DecorationImage(
                             image: AssetImage("mobilePhone.jpg"),
-                            fit: BoxFit.cover,
+                            fit: BoxFit.contain,
                           )),
                         ),
                         Column(
@@ -247,6 +246,7 @@ class WebLayout extends StatelessWidget {
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 50,
+                                  fontWeight: FontWeight.bold,
                                 )),
                             Padding(
                               padding: EdgeInsets.only(top: 15.0),
@@ -273,7 +273,7 @@ class WebLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 70,
+                      vertical: 30,
                       horizontal: 100,
                     ),
                     child: Row(
@@ -285,6 +285,7 @@ class WebLayout extends StatelessWidget {
                               'Watch everywhere.',
                               style: TextStyle(
                                 fontSize: 50,
+                                fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
                             ),
@@ -310,7 +311,7 @@ class WebLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 70,
+                      vertical: 30,
                       horizontal: 100,
                     ),
                     child: Row(
@@ -322,7 +323,7 @@ class WebLayout extends StatelessWidget {
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
                               image: AssetImage("kidsImage.png"),
-                              fit: BoxFit.cover,
+                              fit: BoxFit.contain,
                             )),
                           ),
                           Column(
@@ -330,14 +331,19 @@ class WebLayout extends StatelessWidget {
                             children: const [
                               Text('Create profiles for kids.',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 50)),
+                                    color: Colors.white,
+                                    fontSize: 50,
+                                    fontWeight: FontWeight.bold,
+                                  )),
                               Padding(
                                 padding: EdgeInsets.only(top: 15.0),
                                 child: Text(
                                     'Send kids on adventures with their favorite \ncharacters in a space made just for them—free \nwith your membership.',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
-                                        color: Colors.white, fontSize: 25)),
+                                      color: Colors.white,
+                                      fontSize: 25,
+                                    )),
                               )
                             ],
                           )
@@ -348,9 +354,8 @@ class WebLayout extends StatelessWidget {
                     color: Colors.grey[800],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                      top: 50.0,
-                      bottom: 30,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 40,
                     ),
                     child: Column(
                       children: [
@@ -391,51 +396,53 @@ class WebLayout extends StatelessWidget {
                               )),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 25.0),
+                          padding: const EdgeInsets.only(
+                            top: 25.0,
+                          ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const SizedBox(
-                                width: 430,
-                                height: 55,
-                                child: TextField(
-                                  decoration: InputDecoration(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  width: 420,
+                                  child: TextField(
+                                    cursorHeight: 40,
+                                    decoration: InputDecoration(
+                                      contentPadding: EdgeInsets.symmetric(
+                                        vertical: 27.0,
+                                        horizontal: 15,
+                                      ),
                                       filled: true,
                                       fillColor: Colors.white,
                                       hintText: 'Email Address',
-                                      hintStyle: TextStyle(
-                                        color: Colors.grey,
-                                      )),
-                                ),
-                              ),
-                              // ignore: deprecated_member_use
-                              Container(
-                                color: const Color.fromARGB(255, 255, 17, 0),
-                                width: 200,
-                                height: 48,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Text(
-                                      'Get Started',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 25,
-                                      ),
+                                      hintStyle: TextStyle(color: Colors.grey),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 4.0),
-                                      child: Icon(
-                                        Icons.arrow_forward_ios_rounded,
-                                        color: Colors.white,
-                                      ),
-                                    )
-                                  ],
+                                  ),
                                 ),
-                              )
-                            ],
-                          ),
+                                Container(
+                                  height: 65,
+                                  width: 220,
+                                  color: const Color.fromARGB(255, 255, 17, 0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Text(
+                                        'Get Started',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 25,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 7.0),
+                                        child: Icon(
+                                          Icons.arrow_forward_ios_rounded,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ]),
                         ),
                       ],
                     ),
@@ -449,8 +456,7 @@ class WebLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 15.0,
-                      horizontal: 230,
+                      vertical: 25.0,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -464,6 +470,7 @@ class WebLayout extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 20.0),
                           child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
