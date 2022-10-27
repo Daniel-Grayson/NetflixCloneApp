@@ -456,6 +456,7 @@ class WebLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
+                      horizontal: 270,
                       vertical: 25.0,
                     ),
                     child: Column(
@@ -475,14 +476,11 @@ class WebLayout extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 18.0),
-                                      child: Text('FAQ',
-                                          style: TextStyle(
-                                            color: Colors.grey[500],
-                                            fontSize: 12,
-                                          )),
-                                    ),
+                                    Text('FAQ',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 25.0),
@@ -563,7 +561,7 @@ class WebLayout extends StatelessWidget {
                                             fontSize: 12,
                                           )),
                                     ),
-                                    Text('Corporate information',
+                                    Text('Corporate Information',
                                         style: TextStyle(
                                           color: Colors.grey[500],
                                           fontSize: 12,
