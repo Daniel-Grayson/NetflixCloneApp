@@ -456,7 +456,6 @@ class WebLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 270,
                       vertical: 25.0,
                     ),
                     child: Column(
