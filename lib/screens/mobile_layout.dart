@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'web_layout.dart';
-
 class MobileLayout extends StatelessWidget {
   const MobileLayout({Key? key}) : super(key: key);
 
@@ -297,11 +295,14 @@ class MobileLayout extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(bottom: 40.0),
+            padding: EdgeInsets.only(
+              bottom: 40.0,
+              top: 50,
+            ),
             child: Text('Frequently Asked Questions',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 40,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                 )),
           ),
@@ -324,27 +325,31 @@ class MobileLayout extends StatelessWidget {
             label: 'Is Netflix good for Kids?',
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 50.0),
+            padding: EdgeInsets.only(top: 30.0),
             child: Text(
-                'Ready to watch? Enter your email to create or restart your membership.',
+                'Ready to watch? Enter your email to \ncreate or restart your membership.',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 19,
                 )),
           ),
-          SizedBox(
-            width: 420,
-            child: TextField(
-              // cursorHeight: 40,
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(
-                  vertical: 15.0,
-                  horizontal: 15,
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 15.0),
+            child: SizedBox(
+              width: 420,
+              child: TextField(
+                // cursorHeight: 40,
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(
+                    vertical: 15.0,
+                    horizontal: 15,
+                  ),
+                  filled: true,
+                  fillColor: Colors.white,
+                  hintText: 'Email Address',
+                  hintStyle: TextStyle(color: Colors.grey),
                 ),
-                filled: true,
-                fillColor: Colors.white,
-                hintText: 'Email Address',
-                hintStyle: TextStyle(color: Colors.grey),
               ),
             ),
           ),
@@ -373,8 +378,162 @@ class MobileLayout extends StatelessWidget {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(top: 50.0),
+            child: Divider(
+              thickness: 10,
+              color: Colors.grey[800],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 25.0,
+              horizontal: 55,
+            ),
+            child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  FooterText(
+                    footer: 'Questions? Contact Us.',
+                  ),
+                ]),
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    FooterText(
+                      footer: 'FAQ',
+                    ),
+                    FooterText(
+                      footer: 'Account',
+                    ),
+                    FooterText(
+                      footer: 'Investor Relations',
+                    ),
+                    FooterText(
+                      footer: 'Ways to Watch',
+                    ),
+                    FooterText(
+                      footer: 'Privacy',
+                    ),
+                    FooterText(
+                      footer: 'Corporate Information',
+                    ),
+                    FooterText(
+                      footer: 'Speed Test',
+                    ),
+                    FooterText(
+                      footer: 'Only on Netflix',
+                    ),
+                  ]),
+              Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    FooterText(
+                      footer: 'Help Center',
+                    ),
+                    FooterText(
+                      footer: 'Media Center',
+                    ),
+                    FooterText(
+                      footer: 'Jobs',
+                    ),
+                    FooterText(
+                      footer: 'Terms of Use',
+                    ),
+                    FooterText(
+                      footer: 'Cookie Preferences',
+                    ),
+                    FooterText(
+                      footer: 'Contact Us',
+                    ),
+                    FooterText(
+                      footer: 'Legal Notices',
+                    ),
+                  ]),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 15.0,
+              horizontal: 60,
+            ),
+            child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  FooterText(
+                    footer: 'Netflix Nigeria',
+                  ),
+                ]),
+          ),
         ]),
       ),
+    );
+  }
+}
+
+class FooterText extends StatelessWidget {
+  const FooterText({
+    Key? key,
+    required this.footer,
+  }) : super(key: key);
+  final footer;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 10.0,
+        horizontal: 10,
+      ),
+      child: Text(footer,
+          style: TextStyle(
+            color: Colors.grey[500],
+            fontSize: 12,
+          )),
+    );
+  }
+}
+
+class FrequentlyAskedQuestions extends StatelessWidget {
+  const FrequentlyAskedQuestions({
+    Key? key,
+    required this.label,
+  }) : super(key: key);
+  final label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0),
+      child: Container(
+          width: MediaQuery.of(context).size.width * 0.99999,
+          height: 50,
+          color: Colors.grey[800],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 25.0,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(label,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    )),
+                const Icon(
+                  Icons.add,
+                  size: 30,
+                  color: Colors.white,
+                )
+              ],
+            ),
+          )),
     );
   }
 }
