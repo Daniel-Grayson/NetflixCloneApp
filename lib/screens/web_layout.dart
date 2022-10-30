@@ -172,10 +172,11 @@ class WebLayout extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 20.0,
-                      horizontal: 100.0,
+                      // horizontal: 100.0,
                     ),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -198,16 +199,14 @@ class WebLayout extends StatelessWidget {
                                 ),
                               )
                             ]),
-                        ClipRect(
-                          child: Container(
-                            width: 500,
-                            height: 400,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                              image: AssetImage("tvSet.png"),
-                              fit: BoxFit.contain,
-                            )),
-                          ),
+                        Container(
+                          width: 500,
+                          height: 400,
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                            image: AssetImage("tvSet.png"),
+                            fit: BoxFit.contain,
+                          )),
                         ),
                       ],
                     ),
