@@ -33,8 +33,8 @@ class MobileLayout extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 40,
+                    vertical: 30,
+                    horizontal: 20,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,7 +69,7 @@ class MobileLayout extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(top: 60.0),
                   child: Text(
-                    'Unlimited movies, TV shows, and \nmore.',
+                    'Unlimited movies, TV shows, and more.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
@@ -79,7 +79,7 @@ class MobileLayout extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(top: 15.0),
+                  padding: EdgeInsets.only(top: 30.0),
                   child: Text(
                     'Watch anywhere. Cancel anytime.',
                     style: TextStyle(
@@ -91,18 +91,18 @@ class MobileLayout extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(top: 20.0),
                   child: Text(
-                    'Ready to watch? Enter your email to \ncreate or restart your membership.',
+                    'Ready to watch? Enter your email to create or restart your membership.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 15.0),
                   child: SizedBox(
-                    width: 420,
+                    width: 330,
                     child: TextField(
                       // cursorHeight: 40,
                       decoration: InputDecoration(
@@ -164,7 +164,7 @@ class MobileLayout extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(top: 20.0),
             child: Text(
-              'Watch on Smart TVs, Playstation, Xbox, Chromecast, \nApple TV, Blu-ray players, and more.',
+              'Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
@@ -191,7 +191,7 @@ class MobileLayout extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(top: 40.0),
             child: Text(
-              'Download your shows to watch \noffline.',
+              'Download your shows to watch offline.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
@@ -203,7 +203,7 @@ class MobileLayout extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(top: 20.0),
             child: Text(
-              'Save your favorites easily and always have something \nto watch.',
+              'Save your favorites easily and always have something to watch.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
@@ -241,7 +241,7 @@ class MobileLayout extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(top: 20.0),
             child: Text(
-              'unlimited movies and TV shows on your \nphone, tablet, laptop, and TV.',
+              'unlimited movies and TV shows on your phone, tablet, laptop, and TV.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
@@ -270,7 +270,7 @@ class MobileLayout extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.only(top: 20.0),
             child: Text(
-              'Send kids on adventures with their favorite \ncharacters in a space made just for them—free with \nyour membership.',
+              'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
@@ -300,6 +300,7 @@ class MobileLayout extends StatelessWidget {
               top: 50,
             ),
             child: Text('Frequently Asked Questions',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
@@ -331,13 +332,13 @@ class MobileLayout extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 19,
+                  fontSize: 18,
                 )),
           ),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 15.0),
             child: SizedBox(
-              width: 420,
+              width: 330,
               child: TextField(
                 // cursorHeight: 40,
                 decoration: InputDecoration(
@@ -388,7 +389,7 @@ class MobileLayout extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 25.0,
-              horizontal: 55,
+              horizontal: 24,
             ),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -460,7 +461,7 @@ class MobileLayout extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 15.0,
-              horizontal: 60,
+              horizontal: 25,
             ),
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
