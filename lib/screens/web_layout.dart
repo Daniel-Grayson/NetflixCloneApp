@@ -12,6 +12,7 @@ class WebLayout extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Stack(
+                // fit: StackFit.expand,
                 children: [
                   ShaderMask(
                     shaderCallback: (bounds) => const RadialGradient(
@@ -19,14 +20,14 @@ class WebLayout extends StatelessWidget {
                     ).createShader(bounds),
                     blendMode: BlendMode.darken,
                     child: AspectRatio(
-                      aspectRatio: 16 / 9,
+                      aspectRatio: 3 / 2,
                       child: Container(
-                          width: MediaQuery.of(context).size.width * 0.99999,
-                          height: MediaQuery.of(context).size.height * 0.99999,
+                          // width: MediaQuery.of(context).size.width * 0.99999,
+                          height: 400,
                           decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage("backgroundImage1.jpg"),
-                                fit: BoxFit.cover,
+                                fit: BoxFit.fill,
                                 colorFilter: ColorFilter.mode(
                                   Colors.black45,
                                   BlendMode.darken,
