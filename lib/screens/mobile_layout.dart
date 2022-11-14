@@ -17,7 +17,7 @@ class MobileLayout extends StatelessWidget {
               blendMode: BlendMode.darken,
               child: Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.75,
+                  height: MediaQuery.of(context).size.height * 0.80,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("backgroundImage1.jpg"),
@@ -28,122 +28,126 @@ class MobileLayout extends StatelessWidget {
                         )),
                   )),
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 30,
-                    horizontal: 20,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ClipRect(
-                        child: Align(
-                          widthFactor: 1,
-                          heightFactor: 0.5,
-                          alignment: Alignment.center,
-                          child: SizedBox(
-                            height: 90,
-                            child: Image.network(
-                                "https://cdn-icons-png.flaticon.com/512/5977/5977590.png"),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 30,
+                      horizontal: 20,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ClipRect(
+                          child: Align(
+                            widthFactor: 1,
+                            heightFactor: 0.5,
+                            alignment: Alignment.center,
+                            child: SizedBox(
+                              height: 90,
+                              child: Image.network(
+                                  "https://cdn-icons-png.flaticon.com/512/5977/5977590.png"),
+                            ),
                           ),
                         ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromARGB(255, 255, 17, 0),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            'Sign In',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 60.0),
+                    child: Text(
+                      'Unlimited movies, TV shows, and more.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
                       ),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: const Color.fromARGB(255, 255, 17, 0),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 30.0),
+                    child: Text(
+                      'Watch anywhere. Cancel anytime.',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Text(
+                      'Ready to watch? Enter your email to create or restart your membership.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15.0),
+                    child: SizedBox(
+                      width: 450,
+                      child: TextField(
+                        // cursorHeight: 40,
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 15.0,
+                            horizontal: 15,
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                          hintText: 'Email Address',
+                          hintStyle: TextStyle(color: Colors.grey),
                         ),
-                        onPressed: () {},
-                        child: const Text(
-                          'Sign In',
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 45,
+                    width: 150,
+                    color: const Color.fromARGB(255, 255, 17, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'Get Started',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 18,
                           ),
                         ),
-                      )
-                    ],
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 60.0),
-                  child: Text(
-                    'Unlimited movies, TV shows, and more.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                        Padding(
+                          padding: EdgeInsets.only(left: 7.0),
+                          child: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            size: 15,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 30.0),
-                  child: Text(
-                    'Watch anywhere. Cancel anytime.',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20.0),
-                  child: Text(
-                    'Ready to watch? Enter your email to create or restart your membership.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15.0),
-                  child: SizedBox(
-                    width: 330,
-                    child: TextField(
-                      // cursorHeight: 40,
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(
-                          vertical: 15.0,
-                          horizontal: 15,
-                        ),
-                        filled: true,
-                        fillColor: Colors.white,
-                        hintText: 'Email Address',
-                        hintStyle: TextStyle(color: Colors.grey),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 45,
-                  width: 150,
-                  color: const Color.fromARGB(255, 255, 17, 0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
-                        'Get Started',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 7.0),
-                        child: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          size: 15,
-                          color: Colors.white,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ]),
           Divider(

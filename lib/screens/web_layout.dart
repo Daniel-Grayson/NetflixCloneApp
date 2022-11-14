@@ -172,10 +172,9 @@ class WebLayout extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 20.0,
-                      // horizontal: 100.0,
+                      horizontal: 30.0,
                     ),
                     child: Row(
-                      // crossAxisAlignment: CrossAxisAlignment.stretch,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Column(
@@ -200,7 +199,9 @@ class WebLayout extends StatelessWidget {
                               )
                             ]),
                         Container(
-                          width: 500,
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          // height: MediaQuery.of(context).size.height,
+                          // width: 500,
                           height: 400,
                           decoration: const BoxDecoration(
                               image: DecorationImage(
