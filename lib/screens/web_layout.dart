@@ -49,21 +49,20 @@ class WebLayout extends StatelessWidget {
                                   heightFactor: 0.5,
                                   alignment: Alignment.center,
                                   child: SizedBox(
-                                    height: 150,
+                                    height: 130,
                                     child: Image.network(
                                         "https://cdn-icons-png.flaticon.com/512/5977/5977590.png"),
                                   ),
                                 ),
                               ),
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary:
-                                      const Color.fromARGB(255, 255, 17, 0),
-                                ),
+                              MaterialButton(
+                                height: 42,
+                                color: const Color(0xFFFF1100),
                                 onPressed: () {},
                                 child: const Text(
                                   'Sign In',
                                   style: TextStyle(
+                                    fontSize: 17,
                                     color: Colors.white,
                                   ),
                                 ),
