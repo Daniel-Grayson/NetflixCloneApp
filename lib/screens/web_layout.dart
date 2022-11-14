@@ -177,37 +177,39 @@ class WebLayout extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text('Enjoy on your TV.',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 50,
-                                    fontWeight: FontWeight.bold,
-                                  )),
-                              Padding(
-                                padding: EdgeInsets.only(top: 15.0),
-                                child: Text(
-                                  'Watch on Smart TVs, Playstation, Xbox, \nChromecast, Apple TV, Blu-ray players, and \nmore.',
-                                  style: TextStyle(
-                                    fontSize: 25,
-                                    color: Colors.white,
+                        Expanded(
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Text('Enjoy on your TV.',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 15.0),
+                                  child: Text(
+                                    'Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.',
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                  textAlign: TextAlign.left,
-                                ),
-                              )
-                            ]),
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.5,
-                          // height: MediaQuery.of(context).size.height,
-                          // width: 500,
-                          height: 400,
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                            image: AssetImage("tvSet.png"),
-                            fit: BoxFit.contain,
-                          )),
+                                )
+                              ]),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.5,
+                            height: 400,
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                              image: AssetImage("tvSet.png"),
+                              fit: BoxFit.contain,
+                            )),
+                          ),
                         ),
                       ],
                     ),
@@ -222,13 +224,13 @@ class WebLayout extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 30.0,
-                      horizontal: 100,
+                      horizontal: 30,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          width: 500,
+                          width: MediaQuery.of(context).size.width * 0.5,
                           height: 400,
                           decoration: const BoxDecoration(
                               image: DecorationImage(
@@ -236,28 +238,29 @@ class WebLayout extends StatelessWidget {
                             fit: BoxFit.contain,
                           )),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text('Download your shows to \nwatch offline.',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 50,
-                                  fontWeight: FontWeight.bold,
-                                )),
-                            Padding(
-                              padding: EdgeInsets.only(top: 15.0),
-                              child: Text(
-                                'Save your favorites easily and always have \nsomething to watch.',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text('Download your shows to watch offline.',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 50,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              Padding(
+                                padding: EdgeInsets.only(top: 15.0),
+                                child: Text(
+                                  'Save your favorites easily and always have something to watch.',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                                textAlign: TextAlign.left,
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -310,13 +313,13 @@ class WebLayout extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 30,
-                      horizontal: 100,
+                      horizontal: 30,
                     ),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            width: 500,
+                            width: MediaQuery.of(context).size.width * 0.5,
                             height: 400,
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -324,26 +327,27 @@ class WebLayout extends StatelessWidget {
                               fit: BoxFit.contain,
                             )),
                           ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: const [
-                              Text('Create profiles for kids.',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 50,
-                                    fontWeight: FontWeight.bold,
-                                  )),
-                              Padding(
-                                padding: EdgeInsets.only(top: 15.0),
-                                child: Text(
-                                    'Send kids on adventures with their favorite \ncharacters in a space made just for them—free \nwith your membership.',
-                                    textAlign: TextAlign.left,
+                          Expanded(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: const [
+                                Text('Create profiles for kids.',
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 25,
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.bold,
                                     )),
-                              )
-                            ],
+                                Padding(
+                                  padding: EdgeInsets.only(top: 15.0),
+                                  child: Text(
+                                      'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 25,
+                                      )),
+                                )
+                              ],
+                            ),
                           )
                         ]),
                   ),
@@ -633,8 +637,8 @@ class FrequentlyAskedQuestions extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Container(
-          width: MediaQuery.of(context).size.width * 0.50,
-          height: 60,
+          width: MediaQuery.of(context).size.width * 0.60,
+          height: 80,
           color: Colors.grey[800],
           child: Padding(
             padding: const EdgeInsets.symmetric(
