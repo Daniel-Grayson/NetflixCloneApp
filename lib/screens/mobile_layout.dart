@@ -109,7 +109,7 @@ class MobileLayout extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(2),
                         child: const TextField(
-                          cursorHeight: 40,
+                          cursorHeight: 20,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
