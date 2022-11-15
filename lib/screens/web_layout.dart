@@ -21,7 +21,7 @@ class WebLayout extends StatelessWidget {
                     blendMode: BlendMode.darken,
                     child: Container(
                         width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height * 0.95,
+                        height: MediaQuery.of(context).size.height * 0.99,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage("backgroundImage1.jpg"),
@@ -109,13 +109,21 @@ class WebLayout extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       const SizedBox(
-                                        width: 420,
+                                        width: 440,
                                         child: TextField(
                                           cursorHeight: 40,
                                           decoration: InputDecoration(
+                                            enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0xFFBAC1D0),
+                                                  width: 0.3,
+                                                  style: BorderStyle.solid,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.zero),
                                             contentPadding:
                                                 EdgeInsets.symmetric(
-                                              vertical: 27.0,
+                                              vertical: 24.0,
                                               horizontal: 15,
                                             ),
                                             filled: true,
@@ -127,7 +135,7 @@ class WebLayout extends StatelessWidget {
                                         ),
                                       ),
                                       Container(
-                                        height: 65,
+                                        height: 59,
                                         width: 220,
                                         color: const Color.fromARGB(
                                             255, 255, 17, 0),
@@ -147,6 +155,7 @@ class WebLayout extends StatelessWidget {
                                                   EdgeInsets.only(left: 7.0),
                                               child: Icon(
                                                 Icons.arrow_forward_ios_rounded,
+                                                size: 22,
                                                 color: Colors.white,
                                               ),
                                             )
@@ -241,13 +250,15 @@ class WebLayout extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
-                              Text('Download your shows to watch offline.',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 50,
-                                    fontWeight: FontWeight.bold,
-                                  )),
+                              Text(
+                                'Download your shows to watch offline.',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 50,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                               Padding(
                                 padding: EdgeInsets.only(top: 15.0),
                                 child: Text(
@@ -408,19 +419,26 @@ class WebLayout extends StatelessWidget {
                                   child: TextField(
                                     cursorHeight: 40,
                                     decoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0xFFBAC1D0),
+                                            width: 0.3,
+                                            style: BorderStyle.solid,
+                                          ),
+                                          borderRadius: BorderRadius.zero),
                                       contentPadding: EdgeInsets.symmetric(
-                                        vertical: 27.0,
+                                        vertical: 24.0,
                                         horizontal: 15,
                                       ),
                                       filled: true,
                                       fillColor: Colors.white,
-                                      hintText: 'Email Address',
+                                      hintText: 'Email address',
                                       hintStyle: TextStyle(color: Colors.grey),
                                     ),
                                   ),
                                 ),
                                 Container(
-                                  height: 65,
+                                  height: 59,
                                   width: 220,
                                   color: const Color.fromARGB(255, 255, 17, 0),
                                   child: Row(
@@ -438,6 +456,7 @@ class WebLayout extends StatelessWidget {
                                         child: Icon(
                                           Icons.arrow_forward_ios_rounded,
                                           color: Colors.white,
+                                          size: 22,
                                         ),
                                       )
                                     ],
@@ -449,7 +468,9 @@ class WebLayout extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 70.0),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 70.0,
+                    ),
                     child: Divider(
                       thickness: 10,
                       color: Colors.grey[800],
@@ -458,6 +479,7 @@ class WebLayout extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 25.0,
+                      horizontal: 50,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -471,7 +493,7 @@ class WebLayout extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 20.0),
                           child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -506,43 +528,38 @@ class WebLayout extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 110.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Help Center',
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Help Center',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Jobs',
                                           style: TextStyle(
                                             color: Colors.grey[500],
                                             fontSize: 12,
                                           )),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 25.0),
-                                        child: Text('Jobs',
-                                            style: TextStyle(
-                                              color: Colors.grey[500],
-                                              fontSize: 12,
-                                            )),
-                                      ),
-                                      Text('Cookie Preferences',
+                                    ),
+                                    Text('Cookie Preferences',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Legal Notice',
                                           style: TextStyle(
                                             color: Colors.grey[500],
                                             fontSize: 12,
                                           )),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 25.0),
-                                        child: Text('Legal Notice',
-                                            style: TextStyle(
-                                              color: Colors.grey[500],
-                                              fontSize: 12,
-                                            )),
-                                      )
-                                    ],
-                                  ),
+                                    )
+                                  ],
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -577,34 +594,29 @@ class WebLayout extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 110.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Media Center',
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Media Center',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Terms of Use',
                                           style: TextStyle(
                                             color: Colors.grey[500],
                                             fontSize: 12,
                                           )),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 25.0),
-                                        child: Text('Terms of Use',
-                                            style: TextStyle(
-                                              color: Colors.grey[500],
-                                              fontSize: 12,
-                                            )),
-                                      ),
-                                      Text('Contact Us',
-                                          style: TextStyle(
-                                            color: Colors.grey[500],
-                                            fontSize: 12,
-                                          )),
-                                    ],
-                                  ),
+                                    ),
+                                    Text('Contact Us',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                  ],
                                 )
                               ]),
                         ),

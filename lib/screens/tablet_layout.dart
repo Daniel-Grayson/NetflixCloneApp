@@ -12,7 +12,6 @@ class TabletLayout extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Stack(
-                // fit: StackFit.expand,
                 children: [
                   ShaderMask(
                     shaderCallback: (bounds) => const RadialGradient(
@@ -21,7 +20,7 @@ class TabletLayout extends StatelessWidget {
                     blendMode: BlendMode.darken,
                     child: Container(
                         width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height * 0.99,
+                        height: 730,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage("backgroundImage1.jpg"),
@@ -69,7 +68,7 @@ class TabletLayout extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 120.0),
+                          padding: const EdgeInsets.only(top: 105.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -77,13 +76,13 @@ class TabletLayout extends StatelessWidget {
                                 'Unlimited movies, TV \n shows, and more.',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 55,
+                                  fontSize: 50,
                                   color: Colors.white,
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               const Padding(
-                                padding: EdgeInsets.symmetric(vertical: 20.0),
+                                padding: EdgeInsets.symmetric(vertical: 15.0),
                                 child: Text(
                                   'Watch anywhere. Cancel anytime.',
                                   style: TextStyle(
@@ -107,55 +106,71 @@ class TabletLayout extends StatelessWidget {
                                 child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      const SizedBox(
-                                        width: 420,
-                                        child: TextField(
-                                          cursorHeight: 40,
-                                          decoration: InputDecoration(
-                                            contentPadding:
-                                                EdgeInsets.symmetric(
-                                              vertical: 27.0,
-                                              horizontal: 15,
+                                      SizedBox(
+                                        width: 520,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(2),
+                                          child: const TextField(
+                                            cursorHeight: 40,
+                                            decoration: InputDecoration(
+                                              enabledBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0xFFBAC1D0),
+                                                    width: 0.3,
+                                                    style: BorderStyle.solid,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.zero),
+                                              contentPadding:
+                                                  EdgeInsets.symmetric(
+                                                vertical: 25.0,
+                                                horizontal: 15,
+                                              ),
+                                              filled: true,
+                                              fillColor: Colors.white,
+                                              hintText: 'Email address',
+                                              hintStyle:
+                                                  TextStyle(color: Colors.grey),
                                             ),
-                                            filled: true,
-                                            fillColor: Colors.white,
-                                            hintText: 'Email Address',
-                                            hintStyle:
-                                                TextStyle(color: Colors.grey),
                                           ),
                                         ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                          top: 20.0,
+                                          top: 18.0,
                                           bottom: 140,
                                         ),
-                                        child: Container(
-                                          height: 45,
-                                          width: 160,
-                                          color: const Color(0xFFFF1100),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: const [
-                                              Text(
-                                                'Get Started',
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(2),
+                                          child: Container(
+                                            height: 45,
+                                            width: 160,
+                                            color: const Color(0xFFFF1100),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: const [
+                                                Text(
+                                                  'Get Started',
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 18,
+                                                  ),
                                                 ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    EdgeInsets.only(left: 7.0),
-                                                child: Icon(
-                                                  Icons
-                                                      .arrow_forward_ios_rounded,
-                                                  size: 18,
-                                                  color: Colors.white,
-                                                ),
-                                              )
-                                            ],
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left: 7.0),
+                                                  child: Icon(
+                                                    Icons
+                                                        .arrow_forward_ios_rounded,
+                                                    size: 18,
+                                                    color: Colors.white,
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -176,38 +191,33 @@ class TabletLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 20.0,
+                      vertical: 40.0,
                       horizontal: 30.0,
                     ),
-                    child: Row(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Expanded(
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text('Enjoy on your TV.',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 50,
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 15.0),
-                                  child: Text(
-                                    'Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.',
-                                    style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                )
-                              ]),
+                        const Text('Enjoy on your TV.',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 15.0),
+                          child: Text(
+                            'Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 10.0),
                           child: Container(
-                            width: MediaQuery.of(context).size.width * 0.5,
+                            width: MediaQuery.of(context).size.width * 0.7,
                             height: 400,
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -228,44 +238,37 @@ class TabletLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 30.0,
+                      vertical: 60.0,
                       horizontal: 30,
                     ),
-                    child: Row(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        const Text('Download your shows to watch offline.',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 15.0),
+                          child: Text(
+                            'Save your favorites easily and always have something to watch.',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.5,
+                          width: MediaQuery.of(context).size.width * 0.7,
                           height: 400,
                           decoration: const BoxDecoration(
                               image: DecorationImage(
                             image: AssetImage("mobilePhone.jpg"),
                             fit: BoxFit.contain,
                           )),
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text('Download your shows to watch offline.',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 50,
-                                    fontWeight: FontWeight.bold,
-                                  )),
-                              Padding(
-                                padding: EdgeInsets.only(top: 15.0),
-                                child: Text(
-                                  'Save your favorites easily and always have something to watch.',
-                                  style: TextStyle(
-                                    fontSize: 25,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
                         ),
                       ],
                     ),
@@ -279,35 +282,31 @@ class TabletLayout extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 30,
+                      vertical: 80,
                       horizontal: 100,
                     ),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
-                              'Watch everywhere.',
-                              style: TextStyle(
-                                fontSize: 50,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'Watch everywhere.',
+                          style: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 15.0),
+                          child: Text(
+                            'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 20.0),
-                              child: Text(
-                                'Stream unlimited movies and TV shows \non your phone, tablet, laptop, and TV.',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -320,11 +319,28 @@ class TabletLayout extends StatelessWidget {
                       vertical: 30,
                       horizontal: 30,
                     ),
-                    child: Row(
+                    child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          const Text('Create profiles for kids.',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                              )),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 15.0),
+                            child: Text(
+                              'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.5,
+                            width: MediaQuery.of(context).size.width * 0.7,
                             height: 400,
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -332,28 +348,6 @@ class TabletLayout extends StatelessWidget {
                               fit: BoxFit.contain,
                             )),
                           ),
-                          Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: const [
-                                Text('Create profiles for kids.',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 50,
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 15.0),
-                                  child: Text(
-                                      'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 25,
-                                      )),
-                                )
-                              ],
-                            ),
-                          )
                         ]),
                   ),
                   Divider(
@@ -396,60 +390,76 @@ class TabletLayout extends StatelessWidget {
                         const Padding(
                           padding: EdgeInsets.only(top: 50.0),
                           child: Text(
-                              'Ready to watch? Enter your email to create or restart your membership.',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 19,
-                              )),
+                            'Ready to watch? Enter your email to create \nor restart your membership.',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 25.0),
+                          child: SizedBox(
+                            width: 520,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(2),
+                              child: const TextField(
+                                cursorHeight: 40,
+                                decoration: InputDecoration(
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFBAC1D0),
+                                        width: 0.3,
+                                        style: BorderStyle.solid,
+                                      ),
+                                      borderRadius: BorderRadius.zero),
+                                  contentPadding: EdgeInsets.symmetric(
+                                    vertical: 25.0,
+                                    horizontal: 15,
+                                  ),
+                                  filled: true,
+                                  fillColor: Colors.white,
+                                  hintText: 'Email address',
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
-                            top: 25.0,
+                            top: 18.0,
+                            bottom: 20,
                           ),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(
-                                  width: 420,
-                                  child: TextField(
-                                    cursorHeight: 40,
-                                    decoration: InputDecoration(
-                                      contentPadding: EdgeInsets.symmetric(
-                                        vertical: 27.0,
-                                        horizontal: 15,
-                                      ),
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      hintText: 'Email Address',
-                                      hintStyle: TextStyle(color: Colors.grey),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(2),
+                            child: Container(
+                              height: 45,
+                              width: 160,
+                              color: const Color(0xFFFF1100),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    'Get Started',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
                                     ),
                                   ),
-                                ),
-                                Container(
-                                  height: 65,
-                                  width: 220,
-                                  color: const Color.fromARGB(255, 255, 17, 0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: const [
-                                      Text(
-                                        'Get Started',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 7.0),
-                                        child: Icon(
-                                          Icons.arrow_forward_ios_rounded,
-                                          color: Colors.white,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ]),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 7.0),
+                                    child: Icon(
+                                      Icons.arrow_forward_ios_rounded,
+                                      size: 18,
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -464,6 +474,7 @@ class TabletLayout extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 25.0,
+                      horizontal: 50,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -477,7 +488,7 @@ class TabletLayout extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 20.0),
                           child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -512,43 +523,38 @@ class TabletLayout extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 110.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Help Center',
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Help Center',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Jobs',
                                           style: TextStyle(
                                             color: Colors.grey[500],
                                             fontSize: 12,
                                           )),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 25.0),
-                                        child: Text('Jobs',
-                                            style: TextStyle(
-                                              color: Colors.grey[500],
-                                              fontSize: 12,
-                                            )),
-                                      ),
-                                      Text('Cookie Preferences',
+                                    ),
+                                    Text('Cookie Preferences',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Legal Notice',
                                           style: TextStyle(
                                             color: Colors.grey[500],
                                             fontSize: 12,
                                           )),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 25.0),
-                                        child: Text('Legal Notice',
-                                            style: TextStyle(
-                                              color: Colors.grey[500],
-                                              fontSize: 12,
-                                            )),
-                                      )
-                                    ],
-                                  ),
+                                    )
+                                  ],
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -583,34 +589,29 @@ class TabletLayout extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 110.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Media Center',
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Media Center',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 25.0),
+                                      child: Text('Terms of Use',
                                           style: TextStyle(
                                             color: Colors.grey[500],
                                             fontSize: 12,
                                           )),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 25.0),
-                                        child: Text('Terms of Use',
-                                            style: TextStyle(
-                                              color: Colors.grey[500],
-                                              fontSize: 12,
-                                            )),
-                                      ),
-                                      Text('Contact Us',
-                                          style: TextStyle(
-                                            color: Colors.grey[500],
-                                            fontSize: 12,
-                                          )),
-                                    ],
-                                  ),
+                                    ),
+                                    Text('Contact Us',
+                                        style: TextStyle(
+                                          color: Colors.grey[500],
+                                          fontSize: 12,
+                                        )),
+                                  ],
                                 )
                               ]),
                         ),
@@ -642,8 +643,8 @@ class FrequentlyAskedQuestions extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Container(
-          width: MediaQuery.of(context).size.width * 0.60,
-          height: 80,
+          width: MediaQuery.of(context).size.width * 0.85,
+          height: 55,
           color: Colors.grey[800],
           child: Padding(
             padding: const EdgeInsets.symmetric(

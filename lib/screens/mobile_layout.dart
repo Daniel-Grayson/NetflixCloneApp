@@ -70,7 +70,7 @@ class MobileLayout extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 60.0),
+                    padding: EdgeInsets.only(top: 50.0),
                     child: Text(
                       'Unlimited movies, TV shows, and more.',
                       textAlign: TextAlign.center,
@@ -82,20 +82,9 @@ class MobileLayout extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.only(top: 30.0),
-                    child: Text(
-                      'Watch anywhere. Cancel anytime.',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
-                  const Padding(
                     padding: EdgeInsets.only(top: 20.0),
                     child: Text(
-                      'Ready to watch? Enter your email to create or restart your membership.',
-                      textAlign: TextAlign.center,
+                      'Watch anywhere. Cancel anytime.',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -103,47 +92,71 @@ class MobileLayout extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 15.0),
+                    padding: EdgeInsets.only(top: 20.0),
+                    child: Text(
+                      'Ready to watch? Enter your email to \ncreate or restart your membership.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15.0),
                     child: SizedBox(
                       width: 450,
-                      child: TextField(
-                        // cursorHeight: 40,
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(
-                            vertical: 15.0,
-                            horizontal: 15,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(2),
+                        child: const TextField(
+                          cursorHeight: 40,
+                          decoration: InputDecoration(
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xFFBAC1D0),
+                                  width: 0.3,
+                                  style: BorderStyle.solid,
+                                ),
+                                borderRadius: BorderRadius.zero),
+                            contentPadding: EdgeInsets.symmetric(
+                              vertical: 20.0,
+                              horizontal: 15,
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            hintText: 'Email address',
+                            hintStyle: TextStyle(color: Colors.grey),
                           ),
-                          filled: true,
-                          fillColor: Colors.white,
-                          hintText: 'Email Address',
-                          hintStyle: TextStyle(color: Colors.grey),
                         ),
                       ),
                     ),
                   ),
-                  Container(
-                    height: 45,
-                    width: 150,
-                    color: const Color.fromARGB(255, 255, 17, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'Get Started',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(2),
+                    child: Container(
+                      height: 37,
+                      width: 130,
+                      color: const Color(0xFFFF1100),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
+                            'Get Started',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 7.0),
-                          child: Icon(
-                            Icons.arrow_forward_ios_rounded,
-                            size: 15,
-                            color: Colors.white,
-                          ),
-                        )
-                      ],
+                          Padding(
+                            padding: EdgeInsets.only(left: 7.0),
+                            child: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              size: 14,
+                              color: Colors.white,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -154,36 +167,43 @@ class MobileLayout extends StatelessWidget {
             thickness: 10,
             color: Colors.grey[800],
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 40.0),
-            child: Text(
-              'Enjoy on your TV.',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 40.0,
+              horizontal: 30,
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(top: 20.0),
-            child: Text(
-              'Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),
+            child: Column(
+              children: [
+                const Text(
+                  'Enjoy on your TV.',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20.0),
+                  child: Text(
+                    'Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 450,
+                  height: 350,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                    image: AssetImage("tvSet.png"),
+                    fit: BoxFit.contain,
+                  )),
+                ),
+              ],
             ),
-          ),
-          Container(
-            width: 450,
-            height: 350,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("tvSet.png"),
-              fit: BoxFit.contain,
-            )),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30.0),
@@ -192,37 +212,44 @@ class MobileLayout extends StatelessWidget {
               color: Colors.grey[800],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 40.0),
-            child: Text(
-              'Download your shows to watch offline.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 40.0,
+              horizontal: 30,
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(top: 20.0),
-            child: Text(
-              'Save your favorites easily and always have something to watch.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),
+            child: Column(
+              children: [
+                const Text(
+                  'Download your shows to watch offline.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20.0),
+                  child: Text(
+                    'Save your favorites easily and always have something to watch.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 470,
+                  height: 300,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                    image: AssetImage("mobilePhone.jpg"),
+                    fit: BoxFit.contain,
+                  )),
+                ),
+              ],
             ),
-          ),
-          Container(
-            width: 470,
-            height: 300,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("mobilePhone.jpg"),
-              fit: BoxFit.contain,
-            )),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 40.0),
@@ -231,26 +258,33 @@ class MobileLayout extends StatelessWidget {
               color: Colors.grey[800],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 40.0),
-            child: Text(
-              'Watch everywhere.',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 30.0,
+              horizontal: 30,
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(top: 20.0),
-            child: Text(
-              'unlimited movies and TV shows on your phone, tablet, laptop, and TV.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),
+            child: Column(
+              children: const [
+                Text(
+                  'Watch everywhere.',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20.0),
+                  child: Text(
+                    'unlimited movies and TV shows on your phone, tablet, laptop, and TV.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Padding(
@@ -260,36 +294,43 @@ class MobileLayout extends StatelessWidget {
               color: Colors.grey[800],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 50.0),
-            child: Text(
-              'Create profiles for kids.',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 40.0,
+              horizontal: 30,
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(top: 20.0),
-            child: Text(
-              'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),
+            child: Column(
+              children: [
+                const Text(
+                  'Create profiles for kids.',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20.0),
+                  child: Text(
+                    'Send kids on adventures with their favorite characters in a space made just for them—free with your membership.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 400,
+                  height: 300,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                    image: AssetImage("kidsImage.png"),
+                    fit: BoxFit.contain,
+                  )),
+                ),
+              ],
             ),
-          ),
-          Container(
-            width: 400,
-            height: 300,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("kidsImage.png"),
-              fit: BoxFit.contain,
-            )),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 50.0),
@@ -392,88 +433,84 @@ class MobileLayout extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: 25.0,
-              horizontal: 24,
+              vertical: 40,
+              horizontal: 30,
             ),
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  FooterText(
-                    footer: 'Questions? Contact Us.',
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const FooterText(
+                  footer: 'Questions? Contact Us.',
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          FooterText(
+                            footer: 'FAQ',
+                          ),
+                          FooterText(
+                            footer: 'Account',
+                          ),
+                          FooterText(
+                            footer: 'Investor Relations',
+                          ),
+                          FooterText(
+                            footer: 'Ways to Watch',
+                          ),
+                          FooterText(
+                            footer: 'Privacy',
+                          ),
+                          FooterText(
+                            footer: 'Corporate Information',
+                          ),
+                          FooterText(
+                            footer: 'Speed Test',
+                          ),
+                          FooterText(
+                            footer: 'Only on Netflix',
+                          ),
+                        ]),
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          FooterText(
+                            footer: 'Help Center',
+                          ),
+                          FooterText(
+                            footer: 'Media Center',
+                          ),
+                          FooterText(
+                            footer: 'Jobs',
+                          ),
+                          FooterText(
+                            footer: 'Terms of Use',
+                          ),
+                          FooterText(
+                            footer: 'Cookie Preferences',
+                          ),
+                          FooterText(
+                            footer: 'Contact Us',
+                          ),
+                          FooterText(
+                            footer: 'Legal Notices',
+                          ),
+                        ]),
+                  ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 15.0,
                   ),
-                ]),
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    FooterText(
-                      footer: 'FAQ',
-                    ),
-                    FooterText(
-                      footer: 'Account',
-                    ),
-                    FooterText(
-                      footer: 'Investor Relations',
-                    ),
-                    FooterText(
-                      footer: 'Ways to Watch',
-                    ),
-                    FooterText(
-                      footer: 'Privacy',
-                    ),
-                    FooterText(
-                      footer: 'Corporate Information',
-                    ),
-                    FooterText(
-                      footer: 'Speed Test',
-                    ),
-                    FooterText(
-                      footer: 'Only on Netflix',
-                    ),
-                  ]),
-              Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    FooterText(
-                      footer: 'Help Center',
-                    ),
-                    FooterText(
-                      footer: 'Media Center',
-                    ),
-                    FooterText(
-                      footer: 'Jobs',
-                    ),
-                    FooterText(
-                      footer: 'Terms of Use',
-                    ),
-                    FooterText(
-                      footer: 'Cookie Preferences',
-                    ),
-                    FooterText(
-                      footer: 'Contact Us',
-                    ),
-                    FooterText(
-                      footer: 'Legal Notices',
-                    ),
-                  ]),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 15.0,
-              horizontal: 25,
-            ),
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  FooterText(
+                  child: FooterText(
                     footer: 'Netflix Nigeria',
                   ),
-                ]),
+                ),
+              ],
+            ),
           ),
         ]),
       ),
